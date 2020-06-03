@@ -5,9 +5,9 @@ var wsfed = require('wsfed');
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 
 const wsfedOptions = {
- issuer: 'auth.servepics.com',
-  getPostURL: function(wtrealm, wreply, req, cb) {
-    return cb(null, "https://pkr.auth0.com/login/callback");
+  issuer: 'samplests.example.com',
+  getPostURL: function (wtrealm, wreply, req, cb) {
+    return cb(null, "https://samplests.example.com/login/callback");
   },
 
   cert: `-----BEGIN CERTIFICATE-----
@@ -68,11 +68,11 @@ X4Po1QYz+3dszkDqMp4fklxBwXRsW10KXzPMTZ+sOPAveyxindmjkW8lGy+QsRlG
 PfZ+G6Z6h7mjem0Y+iWlkYcV4PIWL1iwBi8saCbGS5jN2p8M+X+Q7UNKEkROb3N6
 KOqkqm57TH2H3eDJAkSnh6/DNFu0Qg==
 -----END CERTIFICATE-----`,
-key: ``,
+  key: `{REMOVED}`,
 };
 
 
-router.get('/FederationMetadata/2007-06/FederationMetadata.xml',wsfed.metadata(wsfedOptions));
-router.get('/',ensureLoggedIn('/login'),wsfed.auth(wsfedOptions));
+router.get('/FederationMetadata/2007-06/FederationMetadata.xml', wsfed.metadata(wsfedOptions));
+router.get('/', ensureLoggedIn('/login'), wsfed.auth(wsfedOptions));
 
 module.exports = router;
