@@ -19,3 +19,7 @@
 - `cd wsfedidp-samlsp-sample && git checkout master`
 - `nvm use lts/carbon`
 - `npm install`
+
+Run with debugging on:
+
+`DEBUG=wsfed-samlp npm start`
