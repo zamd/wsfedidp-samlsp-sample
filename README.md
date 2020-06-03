@@ -23,3 +23,5 @@
 Run with debugging on:
 
 `DEBUG=wsfed-samlp npm start`
+
+> Original stuff moved to [saml-wsfed-mix](https://github.com/zamd/wsfedidp-samlsp-sample/tree/saml-wsfed-mix) branch.
